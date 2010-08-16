@@ -1,0 +1,16 @@
+options:
+  charset: utf8
+actAs: [Timestampable]
+
+Nice:
+  columns:
+    id:
+      type: integer(11)
+      primary: true
+      autoincrement: true
+    member_id: integer(4)
+    foreign_table: string(100)
+    foreign_id: integer(11)
+  relations:
+    Member:
+      onDelete: cascade
