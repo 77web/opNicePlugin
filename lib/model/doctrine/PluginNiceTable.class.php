@@ -7,13 +7,25 @@
  */
 class PluginNiceTable extends Doctrine_Table
 {
-    /**
-     * Returns an instance of this class.
-     *
-     * @return object PluginNiceTable
-     */
-    public static function getInstance()
+  /**
+   * Returns an instance of this class.
+   *
+   * @return object PluginNiceTable
+   */
+  public static function getInstance()
+  {
+    return Doctrine_Core::getTable('PluginNice');
+  }
+  
+  public function getNicedList($table, $id, $limit=0)
+  {
+    $q = $this->createQuery('n')->where('foreign_table = ? AND foreign_id = ?', array($table, $id))->orderBy('created_at');
+    
+    if($limit>0)
     {
-        return Doctrine_Core::getTable('PluginNice');
+      $q->limit($limit);
     }
+    
+    return $q->execute();
+  }
 }
