@@ -1,0 +1,7 @@
+showSuccess:
+  customize:
+    tagShow:
+      template: [nice, show]
+      parts: [topicBody]
+      target: [top]
+      is_component: true

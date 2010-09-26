@@ -1,0 +1,7 @@
+showSuccess:
+  customize:
+    tagShow:
+      template: [nice, show]
+      parts: [diaryBody]
+      target: [bottom]
+      is_component: true

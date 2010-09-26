@@ -1,0 +1,7 @@
+showSuccess:
+  customize:
+    tagForm:
+      template: [nice, show]
+      parts: [communityEvent]
+      target: [lastRow]
+      is_component: true

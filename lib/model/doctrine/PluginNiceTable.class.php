@@ -28,4 +28,14 @@ class PluginNiceTable extends Doctrine_Table
     
     return $q->execute();
   }
+  
+  public function getNicedCount($table, $id)
+  {
+    return $this->createQuery('n')->where('foreign_table = ? AND foreign_id = ?', array($table, $id))->count();
+  }
+  
+  public function isAlreadyNiced($memberId, $table, $id)
+  {
+    return $this->createQuery('n')->where('member_id = ? AND foreign_table = ? AND foreign_id = ?', array($memberId, $table, $id))->count()>0;
+  }
 }

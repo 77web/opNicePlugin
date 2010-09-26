@@ -5,6 +5,7 @@ class opNicePluginNiceActions extends sfActions
   public function executeRegist(sfWebRequest $request)
   {
     $this->form = new NiceForm();
+    $this->form->getObject()->setMemberId($this->getUser()->getMemberId());
     $this->form->bind($request->getParameter($this->form->getName()));
     if($this->form->isValid())
     {
@@ -17,8 +18,6 @@ class opNicePluginNiceActions extends sfActions
   {
     $this->nice = Doctrine::getTable('Nice')->find($request->getParameter('id', 0));
     $this->forward404Unless($this->nice && $this->nice->isDeletable($this->getUser()->getMemberId()));
-    
-    $request->checkCSRFProtection();
     
     $url = $this->nice->getForeignUrl();
     
