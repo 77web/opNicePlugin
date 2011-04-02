@@ -59,4 +59,9 @@ abstract class PluginNice extends BaseNice
   {
     return $this->getForeignObject()?$this->getForeignObject()->getCreatedAt():'';
   }
+  
+  public function isDeletable($memberId)
+  {
+    return $this->getMemberId() == $memberId;
+  }
 }
