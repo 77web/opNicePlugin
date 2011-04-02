@@ -2,9 +2,10 @@
 
 <form action="<?php echo url_for('@nice_regist'); ?>" method="post">
 <?php echo $newForm; ?>
+<input type="submit" value="<?php echo __('Nice!'); ?>" />
 </form>
 
-<a href="#" onclick='sendNiceForm();'><?php echo __('Nice!'); ?></a>
+
 
 <?php else: ?>
 

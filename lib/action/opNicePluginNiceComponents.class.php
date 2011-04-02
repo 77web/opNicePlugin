@@ -33,6 +33,7 @@ class opNicePluginNiceComponents extends sfComponents
       //new form
       $this->newForm = new NiceForm();
       $this->newForm->getObject()->getMemberId($this->getUser()->getMemberId());
+      $this->newForm->setDefaults(array('foreign_table'=>$this->foreignTable, 'foreign_id'=>$this->foreignId));
     }
     if($this->isAlreadyNiced)
     {
