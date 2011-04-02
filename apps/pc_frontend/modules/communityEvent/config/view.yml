@@ -1,6 +1,6 @@
 showSuccess:
   customize:
-    tagForm:
+    niceShow:
       template: [nice, show]
       parts: [communityEvent]
       target: [lastRow]

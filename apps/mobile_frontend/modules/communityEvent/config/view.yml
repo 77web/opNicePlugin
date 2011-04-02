@@ -1,7 +1,7 @@
 showSuccess:
   customize:
-    tagShow:
+    niceShow:
       template: [nice, show]
-      parts: [topicBody]
+      parts: [topicDetailBox]
       target: [top]
       is_component: true

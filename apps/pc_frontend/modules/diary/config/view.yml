@@ -1,7 +1,7 @@
 showSuccess:
   customize:
-    tagShow:
+    niceShow:
       template: [nice, show]
-      parts: [diaryBody]
+      parts: [diaryDetailBox]
       target: [bottom]
       is_component: true
