@@ -1,0 +1,8 @@
+nice_delete:
+  url: /nice/delete/:id
+  class: sfDoctrineRoute
+  options: { model: Nice, type: object }
+  param: { module: nice, action: delete }
+  requirements:
+    id: \d+
+    sf_method: [post]

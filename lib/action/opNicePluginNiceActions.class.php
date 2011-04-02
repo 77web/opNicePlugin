@@ -16,8 +16,10 @@ class opNicePluginNiceActions extends sfActions
   
   public function executeDelete(sfWebRequest $request)
   {
-    $this->nice = Doctrine::getTable('Nice')->find($request->getParameter('id', 0));
-    $this->forward404Unless($this->nice && $this->nice->isDeletable($this->getUser()->getMemberId()));
+    $request->checkCSRFProtection();
+    
+    $this->nice = $this->getRoute()->getObject();
+    $this->forward404Unless($this->nice->isDeletable($this->getUser()->getMemberId()));
     
     $url = $this->nice->getForeignUrl();
     
