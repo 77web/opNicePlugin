@@ -15,7 +15,7 @@ abstract class PluginNiceForm extends BaseNiceForm
     parent::setup();
     
     unset($this['id']);
-    $this->useField(array('foreign_id', 'foreign_table'));
+    $this->useFields(array('foreign_id', 'foreign_table'));
     
     $this->setWidget('foreign_id', new sfWidgetFormInputHidden());
     $this->setWidget('foreign_table', new sfWidgetFormInputHidden());
