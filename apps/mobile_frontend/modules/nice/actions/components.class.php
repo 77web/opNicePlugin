@@ -15,7 +15,7 @@
  * @subpackage nice
  * @author     H. Hishida<info@77-web.com>
  */
-class niceComponentss extends opNicePluginNiceComponents
+class niceComponents extends opNicePluginNiceComponents
 {
 
 }

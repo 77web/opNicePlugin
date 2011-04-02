@@ -21,7 +21,7 @@ class opNicePluginNiceComponents extends sfComponents
     $this->foreignId = $this->target->getId();
     
     $this->nicedCount = Doctrine::getTable('Nice')->getNicedCount($this->foreignTable, $this->foreignId);
-    $this->nicedList = Doctrine::getTable('Nice')->getNicedList($this->foreignTable, $this->foreignId), 5);
+    $this->nicedList = Doctrine::getTable('Nice')->getNicedList($this->foreignTable, $this->foreignId, 5);
     
     $this->isMine = $this->target->getMemberId() == $this->getUser()->getMemberId();
     $this->isAlreadyNiced = $this->getUser()->getMemberId()?Doctrine::getTable('Nice')->isAlreadyNiced($this->getUser()->getMemberId(), $this->foreignTable, $this->foreignId):false;
