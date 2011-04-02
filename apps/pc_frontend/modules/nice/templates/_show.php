@@ -16,6 +16,6 @@
 <?php if($nicedCount>0): ?>
   (<?php echo $nicedCount; ?>)
   <?php foreach($nicedList as $nice): ?>
-    <?php echo link_to($nice->getMember()->getName(), '@member_profile?id='.$nice->getMemberId()); ?><?php if($nice->isDeletable($sf_user->getMemberId())): ?>(<form action="<?php echo url_for('@nice_delete?id='.$nice->getId()); ?>" method="post"><?php echo $deleteForm; ?><input type="submit" value="<?php echo __('Delete Nice!'); ?>" /></form>)<?php endif; ?>&nbsp;
+    <?php echo link_to($nice->getMember()->getName(), '@member_profile?id='.$nice->getMemberId()); ?><?php if($nice->isDeletable($sf_user->getMemberId())): ?>(<form action="<?php echo url_for('@nice_delete?id='.$nice->getId()); ?>" method="post" class="NiceDeleteForm"><?php echo $deleteForm; ?><input type="submit" value="<?php echo __('Delete Nice!'); ?>" /></form>)<?php endif; ?>&nbsp;
   <?php endforeach; ?>
 <?php endif; ?>

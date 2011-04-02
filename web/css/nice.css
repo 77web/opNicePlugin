@@ -1,0 +1,27 @@
+form.NiceDeleteForm
+{
+  display: inline;
+}
+
+form.NiceDeleteForm input
+{
+  display: inline;
+  cursor: pointer;
+  background: transparent;
+  border-width: 0;
+  text-decoration: underline;
+}
+
+form#NiceForm
+{
+  display: inline;
+}
+
+form#NiceForm input
+{
+  display: inline;
+  cursor: pointer;
+  background: transparent;
+  border-width: 0;
+  text-decoration: underline;
+}

@@ -17,5 +17,10 @@
  */
 class niceComponents extends opNicePluginNiceComponents
 {
-
+  public function executeShow($request)
+  {
+    parent::executeShow($request);
+    
+    $this->getResponse()->addStylesheet('/opNicePlugin/css/nice.css');
+  }
 }
