@@ -6,3 +6,7 @@ nice_delete:
   requirements:
     id: \d+
     sf_method: [post]
+
+nice_regist:
+  url: /nice/regist
+  param: { module: nice, action: regist }
