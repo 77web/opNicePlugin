@@ -38,4 +38,30 @@ class PluginNiceTable extends Doctrine_Table
   {
     return $this->createQuery('n')->where('member_id = ? AND foreign_table = ? AND foreign_id = ?', array($memberId, $table, $id))->count()>0;
   }
+  
+  public function getMemberPager($foreignTable, $foreignId, $size, $page = 1)
+  {
+    if($page < 1) $page = 1;
+    $q = $this->createQuery('n')->addWhere('n.foreign_table = ? AND n.foreign_id = ?', array($foreignTable, $foreignId))->orderBy('n.created_at DESC');
+    
+    $pager = new sfDoctrinePager('Nice', $size);
+    $pager->setQuery($q);
+    $pager->setPage($page);
+    $pager->init();
+    
+    return $pager;
+  }
+  
+  public function getContentPager($memberId, $size, $page = 1)
+  {
+    if($page < 1) $page = 1;
+    $q = $this->createQuery('n')->addWhere('n.member_id = ?', $memberId)->orderBy('n.created_at DESC');
+    
+    $pager = new sfDoctrinePager('Nice', $size);
+    $pager->setQuery($q);
+    $pager->setPage($page);
+    $pager->init();
+    
+    return $pager;
+  }
 }

@@ -10,6 +10,22 @@
         <source>Delete Nice!</source>
         <target>×</target>
       </trans-unit>
+      <trans-unit id="">
+        <source>Members who niced %name%</source>
+        <target>「%name%」にイイネ！と言っているメンバー</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>No member niced.</source>
+        <target>イイネ！と言っているメンバーはいません。</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>%member% niced these.</source>
+        <target>%member%さんのイイネ！一覧</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>No content.</source>
+        <target>イイネ！はありません。</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

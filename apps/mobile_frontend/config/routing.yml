@@ -10,3 +10,25 @@ nice_delete:
 nice_regist:
   url: /nice/regist
   param: { module: nice, action: regist }
+
+#nice_content_list:
+#  url: /nice/by/:id
+#  class: sfDoctrineRoute
+#  options: { model: Member, type: object }
+#  param: { module: nice, action: contentList }
+#  requirements:
+#    id: \d+
+#    sf_method: [get]
+
+nice_my_list:
+  url: /nice/my
+  param: { module: nice, action: contentList }
+
+
+niced_member_list:
+  url: /nice/list/:table/:id
+  param: { module: nice, action: memberList }
+  requirements:
+    table: \w+
+    id: \d+
+  
