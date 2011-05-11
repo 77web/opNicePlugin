@@ -22,7 +22,7 @@ class opNicePluginNiceRemover
   
   private function removeNices($obj)
   {
-    foreach(Doctrine::getTable('Nice')->getNicedList(get_table($obj, $obj->getId())) as $nice)
+    foreach(Doctrine::getTable('Nice')->getNicedList(get_class($obj), $obj->getId()) as $nice)
     {
       $nice->delete();
     }
