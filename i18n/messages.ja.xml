@@ -26,6 +26,14 @@
         <source>No content.</source>
         <target>イイネ！はありません。</target>
       </trans-unit>
+      <trans-unit id="">
+        <source>You cannot nice to this content.</source>
+        <target>イイネ！できません。</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>You have already niced this content.</source>
+        <target>既にイイネ！済みです。</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

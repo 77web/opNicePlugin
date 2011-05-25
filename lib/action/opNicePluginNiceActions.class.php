@@ -11,7 +11,19 @@ class opNicePluginNiceActions extends sfActions
     {
       $nice = $this->form->save();
     }
-    $this->redirect($nice->getForeignUrl());
+    else
+    {
+      $msgs = array();
+      if($this->form->hasGlobalErrors())
+      {
+        foreach($this->form->getGlobalErrors() as $err)
+        {
+          $msgs[] = (string)$err;
+        }
+      }
+      $this->getUser()->setFlash('error', implode("\n", $msgs));
+    }
+    $this->redirect( isset($nice) ? $nice->getForeignUrl() : '@homepage');
   }
   
   public function executeDelete(sfWebRequest $request)
