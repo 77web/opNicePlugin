@@ -29,11 +29,18 @@ abstract class PluginNice extends BaseNice
   
   public function getForeignTitle()
   {
-    $key = "name";
-    if($this->getForeignTable()=="Diary")
+    switch($this->getForeignTable()=="Diary")
     {
-      $key = "title";
+      case "Diary":
+        $key = "title";
+        break;
+      case "ActivityData":
+        $key = "body";
+        break;
+      default:
+        $key = "name";
     }
+    
     return $this->getForeignObject()?$this->getForeignObject()->get($key):'';
   }
   
@@ -50,6 +57,11 @@ abstract class PluginNice extends BaseNice
         break;
       case "CommunityEvent":
         $url = "communityEvent/show?id=".$this->getForeignId();
+        break;
+      case "ActivityData":
+        //activity has show action?
+        //$url = "activity/show?id=".$this->getForeignId();
+        $url = "member/showActivity?id=".$this->getForeignObject()->getMemberId();
         break;
     }
     return $url;
